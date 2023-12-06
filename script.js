@@ -9,11 +9,11 @@ Person.prototype.greet = function() {
 };
 
 function Employee extends (name, age, jobTitle) {
-	super(this, name, age);
+	Person.call(this, name, age);
 	this.jobTitle = jobTitle;
 };
 
-Person.prototype = Object.create(Employee.prototype);
+Employee.prototype = Object.create(Person.prototype);
 
 Employee.prototype.jonGreet = function)() {
 	console.log(`Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}.`);
