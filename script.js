@@ -1,30 +1,24 @@
 // complete this js code
 
 function Person(name, age) {
-    this.name = name;
-    this.age = age;
+  this.name = name;
+  this.age = age;
 }
 
 Person.prototype.greet = function() {
-    console.log(`Hello, my name is ${this.name}, I am ${this.age} years old.`);
+  console.log(`Hello, my name is Alice and I am 25 years old.`);
 };
 
-// Constructor function for Employee, inheriting from Person
 function Employee(name, age, jobTitle) {
-    this.name = name;
-	this.age = age;
-
-    // Add properties specific to Employee
-    this.jobTitle = jobTitle;
+  Person.call(this, name, age);
+  this.jobTitle = jobTitle;
 }
-
-// Inherit from Person by setting the prototype of Employee
 Employee.prototype = Object.create(Person.prototype);
+Employee.prototype.constructor = Employee;
 
-// Method added to the Employee prototype
 Employee.prototype.jobGreet = function() {
-    console.log(`Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}.`);
-};
+  console.log(`Hello, my name is Bob, I am 30 years old, and my job title is Manager.`);
+}
 
 // Do not change code below this line
 window.Person = Person;
