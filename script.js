@@ -11,8 +11,8 @@ Person.prototype.greet = function() {
 
 // Constructor function for Employee, inheriting from Person
 function Employee(name, age, jobTitle) {
-    // Call the Person constructor to initialize inherited properties
-    Person.call(this, name, age);
+    this.name = name;
+	this.age = age;
 
     // Add properties specific to Employee
     this.jobTitle = jobTitle;
